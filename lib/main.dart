@@ -42,19 +42,66 @@ class _HomePage1State extends State<HomePage1> {
     return Scaffold(
       appBar: new AppBar(
         backgroundColor: Colors.orange,
-        leading: IconButton(
+        /*leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {}
-        ),
+        ),*/
 
         title: Text('Onemedia'),
         actions: <Widget>[
+          new IconButton(icon: Icon(Icons.search, color: Colors.white,), onPressed:(){}),
           new IconButton(icon: Icon(Icons.shopping_cart,color: Colors.white,), onPressed: (){})
         ],
-      ),drawer: new Drawer(
+      ),
+      drawer: new Drawer(
       child: new ListView(
         children:<Widget> [
-          new UserAccountsDrawerHeader(accountName: Text('Domingos Cesar'), accountEmail: Text('domingoscesar058@gmail.com'))
+          new UserAccountsDrawerHeader(accountName: Text('Domingos Cesar'), accountEmail: Text('domingoscesar058@gmail.com'),
+          currentAccountPicture: GestureDetector(
+            child: new CircleAvatar(
+              backgroundColor: Colors.blueGrey,
+              child: Icon(Icons.person, color: Colors.white,),
+            ),
+          ) ,),
+          
+          InkWell(
+            onTap: (){},
+            child: ListTile(
+              title: Text('Home Page'),
+              leading: Icon(Icons.home),
+            ),
+          ),
+
+          InkWell(
+            onTap: (){},
+            child: ListTile(
+              title: Text('My Account'),
+              leading: Icon(Icons.person),
+            ),
+          ),
+
+          InkWell(
+            onTap: (){},
+            child: ListTile(
+              title: Text('My Orders'),
+              leading: Icon(Icons.shopping_basket),
+            ),
+          ),
+          Divider(),
+          InkWell(
+            onTap: (){},
+            child: ListTile(
+              title: Text('Settings'),
+              leading: Icon(Icons.settings),
+            ),
+          ),
+          InkWell(
+            onTap: (){},
+            child: ListTile(
+              title: Text('About'),
+              leading: Icon(Icons.help),
+            ),
+          ),
         ],
       ),
     ),
